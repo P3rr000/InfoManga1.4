@@ -10,7 +10,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Login">
-        <activity android:name=".InfoMangas"></activity>
+        <activity
+            android:name=".Registrar"
+            android:exported="false" />
+        <activity android:name=".InfoMangas" />
         <activity android:name=".Login">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -19,11 +22,12 @@
         <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".InfoJuegos"></activity>
-        <activity android:name=".CardViewUno"></activity>
+        <activity android:name=".InfoJuegos" />
+        <activity android:name=".CardViewUno" />
     </application>
 
 </manifest>

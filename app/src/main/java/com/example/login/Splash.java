@@ -29,5 +29,4 @@ public class Splash extends AppCompatActivity {
         tiempo.schedule(tarea, 2500);
     }
 
-
 }

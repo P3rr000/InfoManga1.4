@@ -83,4 +83,24 @@
         app:layout_constraintTop_toBottomOf="@+id/password"
         android:background="@drawable/boton_redondo"/>
 
+    <Button
+        android:id="@+id/btnRegistrar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="240dp"
+        android:background="@drawable/boton_redondo"
+        android:text="@string/registrar"
+        android:textColor="#ffffff"
+        app:backgroundTint="#ff0000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLoging" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
