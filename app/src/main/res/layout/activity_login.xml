@@ -63,6 +63,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user"
         tools:ignore="TouchTargetSizeCheck" />
+
     <Button
         android:id="@+id/btnLoging"
         android:layout_width="0dp"
@@ -73,15 +74,16 @@
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:layout_marginBottom="296dp"
+        android:background="@drawable/boton_redondo"
         android:text="@string/ingresar"
-        app:backgroundTint="#ff0000"
         android:textColor="#ffffff"
+        app:backgroundTint="#ff0000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
-        android:background="@drawable/boton_redondo"/>
+        app:layout_constraintVertical_bias="0.144" />
 
     <Button
         android:id="@+id/btnRegistrar"
@@ -101,7 +103,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLoging" />
+        app:layout_constraintTop_toBottomOf="@+id/btnLoging"
+        app:layout_constraintVertical_bias="0.436" />
 
     <Button
         android:id="@+id/btnMostrar"
