@@ -138,6 +138,7 @@ public class Login extends Activity implements View.OnClickListener {
                     Intent i=new Intent(Login.this,InfoMangas.class);
                     i.putExtra("Id", ux.getId());
                     startActivity(i);
+                    finish();
                 }
                 break;
             case R.id.btnRegistrar:

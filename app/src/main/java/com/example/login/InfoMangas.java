@@ -6,41 +6,47 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 
-public class InfoMangas extends Activity {
-
+public class InfoMangas extends Activity implements View.OnClickListener {
+Button btnEditar, btnMostrar, btnSalir;
+TextView nombre;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_infomangas);
-
-        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
-        boolean firstStart = prefs.getBoolean("firstStart",true);
-
-        if (firstStart){
-            segundaAlerta();
-        }
+        nombre=(TextView)findViewById(R.id.nombreUsuario);
+        btnEditar=(Button)findViewById(R.id.btnEditar);
+        btnMostrar=(Button)findViewById(R.id.btnMostrar);
+        btnSalir=(Button)findViewById(R.id.btnSalir);
+        btnEditar.setOnClickListener(this);
+        btnMostrar.setOnClickListener(this);
+        btnSalir.setOnClickListener(this);
     }
     public void MostrarLista(View view) {
         Intent mostrarLista = new Intent(this, CardViewUno.class);
         startActivity(mostrarLista);
     }
 
-    private void segundaAlerta(){
-        new AlertDialog.Builder(this)
-                .setTitle("¿De que trata esta aplicación?")
-                .setMessage("InfoManga es una aplicación en donde se mostrará información sobre mangas y juegos de interes del creador o sea JP")
-                .setPositiveButton("Entendido", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                    }
-                })
-                .create().show();
-        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.putBoolean("firstStart",false);
-        editor.apply();
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()){
+            case R.id.btnEditar:
+                Intent e=new Intent(InfoMangas.this,Editar.class);
+                startActivity(e);
+                break;
+            case R.id.btnMostrar:
+                Intent m=new Intent(InfoMangas.this,Mostrar.class);
+                startActivity(m);
+                break;
+            case R.id.btnSalir:
+                Intent s=new Intent(InfoMangas.this,Login.class);
+                startActivity(s);
+                finish();
+                break;
+        }
     }
 }
