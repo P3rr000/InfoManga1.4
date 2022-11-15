@@ -11,6 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Login">
         <activity
+            android:name=".Editar"
+            android:exported="false" />
+        <activity
+            android:name=".Mostrar"
+            android:exported="false" />
+        <activity
             android:name=".Registrar"
             android:exported="false" />
         <activity android:name=".InfoMangas" />
