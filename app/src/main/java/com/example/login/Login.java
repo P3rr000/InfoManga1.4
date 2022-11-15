@@ -26,6 +26,7 @@ public class Login extends Activity implements View.OnClickListener {
     SensorManager sensorManager;
     Sensor sensor;
     SensorEventListener sensorEventListener;
+    daoUsuario dao;
 
     @Override
     protected void onPause() {
@@ -126,8 +127,18 @@ public class Login extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btnLogin:
-                Intent i=new Intent(Login.this,InfoMangas.class);
-                startActivity(i);
+                String u=user.getText().toString();
+                String p=pass.getText().toString();
+                if(u.equals("")&&p.equals("")){
+                    Toast.makeText(this,"No hay datos ingresados",Toast.LENGTH_LONG).show();
+                }
+                else if(dao.login(u,p)==1){
+                    Usuario ux= dao.getUsuario(u,p);
+                    Toast.makeText(this,"Credenciales Correctas",Toast.LENGTH_LONG).show();
+                    Intent i=new Intent(Login.this,InfoMangas.class);
+                    i.putExtra("Id", ux.getId());
+                    startActivity(i);
+                }
                 break;
             case R.id.btnRegistrar:
                 Intent ii=new Intent(Login.this,Registrar.class);
