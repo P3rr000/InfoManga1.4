@@ -2,6 +2,7 @@ package com.example.login;
 
 public class ListElement {
     public String name;
+    public String autor;
 
     public ListElement(String name) {
         this.name = name;
