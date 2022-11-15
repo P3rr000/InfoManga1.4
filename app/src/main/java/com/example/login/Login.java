@@ -64,7 +64,7 @@ public class Login extends Activity implements View.OnClickListener {
                     getWindow().getDecorView().setBackgroundColor(Color.RED);
                 }
                 else{
-                    getWindow().getDecorView().setBackgroundColor(Color.WHITE);
+                    getWindow().getDecorView().setBackgroundColor(Color.DKGRAY);
                 }
             }
 
