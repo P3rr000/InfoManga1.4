@@ -32,11 +32,12 @@ public class CardViewUno extends Activity {
     }
     public void init(){
         elements = new ArrayList<>();
-        elements.add(new ListElement("Berserk"));
-        elements.add(new ListElement("One Punch Man"));
-        elements.add(new ListElement("Vagabond"));
-        elements.add(new ListElement("Dragon Ball Super"));
-        elements.add(new ListElement("Rikudo"));
+        elements.add(new ListElement("#FF0000","Berserk","Kentaro Miura"));
+        elements.add(new ListElement("#FFF000","One Punch Man","Yusuke Murata"));
+        elements.add(new ListElement("#0FFF00","Vagabond","Takehiko Inoue"));
+        elements.add(new ListElement("#00FFF0","Dragon Ball Super","Akira Toriyama"));
+        elements.add(new ListElement("#0000FF","Rikudo","Matsubara Toshimitsu"));
+        elements.add(new ListElement("#FF00FF","Kengan Ashura","Daromeon"));
 
         ListAdapter listAdapter = new ListAdapter(elements, this);
         RecyclerView recyclerView = findViewById(R.id.listRecyclerView);

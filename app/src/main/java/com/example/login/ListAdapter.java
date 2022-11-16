@@ -1,9 +1,12 @@
 package com.example.login;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -37,13 +40,18 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     public void setItems(List<ListElement> items) {mData = items; }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView name;
+        ImageView ic_bookicon;
+        TextView name, autor;
         ViewHolder(View itemView) {
             super(itemView);
+            ic_bookicon=itemView.findViewById(R.id.iconImageView);
             name = itemView.findViewById(R.id.nameTextView);
+            autor = itemView.findViewById(R.id.autorTextView);
         }
         void bindData(final ListElement item) {
+            ic_bookicon.setColorFilter(Color.parseColor(item.getColor()), PorterDuff.Mode.SRC_IN);
             name.setText(item.getName());
+            autor.setText(item.getAutor());
         }
     }
 }
